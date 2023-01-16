@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <title>QR code generator</title>    
+    <style>
+      #spinner img {
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }      
+    </style>
+</head>
+<body>
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">            
+            <img src="image/logo.png" style="width: 50px; height: 50px;" alt="">
+            <span class="ml-3 text-xl">QR Code Generator</span>
+          </a>          
+        </div>
+      </header>
+    <section class="text-gray-600 body-font relative">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-12">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Generate Your QR Code</h1>            
+          </div>
+          <div class="lg:w-1/2 md:w-2/3 mx-auto">
+            <div class="flex flex-wrap -m-2">
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label for="name" class="leading-7 text-sm text-gray-600">URL</label>
+                  <input type="text" id="url" name="url" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-yellow-500 focus:bg-white focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+              </div>
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label for="email" class="leading-7 text-sm text-gray-600">Size</label>
+                  <select name="size" id="size" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-yellow-500 focus:bg-white focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out">                    
+                    <option value="100">100*100</option>
+                    <option value="200">200*200</option>
+                    <option value="300">300*300</option>
+                    <option value="400">400*400</option>
+                  </select>
+                </div>
+              </div>              
+              <div class="p-2 w-full">
+                <button id="qrbtn" class="flex mx-auto text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg">Generate</button>
+              </div>
+              
+              <div class="p-2 w-full">
+                <div id="spinner">
+                  <img src="image/806.gif">
+                </div>
+                <div id="target" style="margin-top: 50px; justify-content: center;" class="flex mx-auto text-white bg-white-500 border-0 py-2 px-8 focus:outline-none hover:bg-white-600 rounded text-lg"></div>   
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>    
+    <script src="script.js"></script>
+</body>
+</html>
